@@ -8,9 +8,7 @@ const TodoList = ({ todos, handleComplete }) => {
         {todos.map((todo) => (
           <li key={todo.id}>
             {todo.todo}
-            {todo.isComplete === 'completed' ? (
-              <div></div>
-            ) : (
+            {todo.isComplete === 'not completed' && (
               <button
                 key={todo.id}
                 onClick={() => {
