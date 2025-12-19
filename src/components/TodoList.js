@@ -9,7 +9,7 @@ const TodoList = ({ todos, handleComplete }) => {
           <li key={todo.id}>
             {todo.todo}
             {todo.isComplete ? (
-              <></>
+              <div></div>
             ) : (
               <button
                 onClick={() => {
