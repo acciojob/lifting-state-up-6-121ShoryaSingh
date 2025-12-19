@@ -6,8 +6,8 @@ const TodoList = ({ todos, handleComplete }) => {
       <h1>Child Component</h1>
       <ul>
         {todos.map((todo) => (
-          <>
-            <li key={todo.id}>{todo.todo}</li>
+          <li key={todo.id}>
+            {todo.todo}
             {todo.isComplete ? (
               <></>
             ) : (
@@ -19,7 +19,7 @@ const TodoList = ({ todos, handleComplete }) => {
                 Complete
               </button>
             )}
-          </>
+          </li>
         ))}
       </ul>
     </div>
