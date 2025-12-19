@@ -1,0 +1,29 @@
+import React from 'react';
+
+const TodoList = ({ todos, handleComplete }) => {
+  return (
+    <div>
+      <h1>Child Component</h1>
+      <ul>
+        {todos.map((todo) => (
+          <>
+            <li key={todo.id}>{todo.todo}</li>
+            {todo.isComplete ? (
+              <></>
+            ) : (
+              <button
+                onClick={() => {
+                  handleComplete(todo.id);
+                }}
+              >
+                Complete
+              </button>
+            )}
+          </>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default TodoList;
