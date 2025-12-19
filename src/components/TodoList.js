@@ -12,6 +12,7 @@ const TodoList = ({ todos, handleComplete }) => {
               <div></div>
             ) : (
               <button
+                key={todo.id}
                 onClick={() => {
                   handleComplete(todo.id);
                 }}
