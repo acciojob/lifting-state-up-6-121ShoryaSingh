@@ -4,22 +4,20 @@ import TodoList from './TodoList';
 
 const App = () => {
   const [todos, setTodos] = useState([
-    { id: 1, todo: 'Learn React', isComplete: 'not completed' },
-    { id: 2, todo: 'Build a React app', isComplete: 'not completed' },
-    { id: 3, todo: 'Deploy the React app', isComplete: 'not completed' },
+    { id: 1, todo: 'Learn React', isComplete: false },
+    { id: 2, todo: 'Build a React app', isComplete: false },
+    { id: 3, todo: 'Deploy the React app', isComplete: false },
   ]);
 
   const handleComplete = (id) => {
-    console.log('handleComplete called with id:', id);
-    console.log('Before:', todos);
+    // console.log('handleComplete called with id:', id);
+    // console.log('Before:', todos);
 
     setTodos((prevTodos) =>
-      prevTodos.map((todo) => {
-        const updated =
-          todo.id === id ? { ...todo, isComplete: 'completed' } : todo;
-        console.log(`Todo ${todo.id}:`, updated);
-        return updated;
-      })
+      prevTodos.map(
+        (todo) => (todo.id === id ? { ...todo, isComplete: true } : todo)
+        // console.log(`Todo ${todo.id}:`, updated);
+      )
     );
   };
   return (
