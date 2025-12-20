@@ -10,10 +10,16 @@ const App = () => {
   ]);
 
   const handleComplete = (id) => {
+    console.log('handleComplete called with id:', id);
+    console.log('Before:', todos);
+
     setTodos((prevTodos) =>
-      prevTodos.map((todo) =>
-        todo.id === id ? { ...todo, isComplete: 'completed' } : todo
-      )
+      prevTodos.map((todo) => {
+        const updated =
+          todo.id === id ? { ...todo, isComplete: 'completed' } : todo;
+        console.log(`Todo ${todo.id}:`, updated);
+        return updated;
+      })
     );
   };
   return (
